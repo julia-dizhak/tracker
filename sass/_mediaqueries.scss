@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+$target-width: 980px;
+$width-ipad-landscape: 1024px;
+$width-ipad-portrait: 768px;
+
+//@media screen and ($max-width: $width-ipad-landscape) {
+
+  //}
+//@media screen and ($max-width: $width-ipad-portrait) {
+
+  //}
+
+@media screen and (max-width: 979px) {
+  .wrapper {
+    width: 100%;
+  }
+}

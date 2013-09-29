@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <title>BrainPanic</title>
+    
+	  <link media="screen, projection" rel="stylesheet" href="stylesheets/normalize.css">
+    <link media="print" rel="stylesheet" href="stylesheets/print.css">
+	  <link media="screen, projection" rel="stylesheet" href="stylesheets/screen.css">
+    
+    <!--[if lt IE 9]>
+          <script src="js/vendor/html5.js"></script>
+    <![endif]-->
+      
+      <!--[if lt IE 9]>
+          <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+      <![endif]-->  
+      
+    <!--[if IE]>
+        <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <![endif]-->
+      
+      
+</head>
+<body>
+  
+<header class="head">
+  <div class="wrapper">
+    <div class="cf">  
+      <nav class="main-menu js-menu">
+        <ul>
+          <li class="item">
+            <a href="#"></a>
+          </li>
+         
+        </ul>
+      </nav>
+  </div>
+</header>
+
+<section>
+  <div class="wrapper">
+    
+  <div class="task-wrap">
+     <h2>BrainStack</h2>
+     <div class="btn-wrap"><a class="js-task-add task-add" href="#" data-popup="task-add"> create new task</a></div>
+     
+     <div class="js-popup-task-add popup-task-add" data-popup="task-add">
+       <div class="wrap">
+         <i class="cube-top"></i>
+         <form action="./">
+           <label for="task-name">Enter name for task</label>
+           <input id="task-name" type="text" palceholder="Enter name for task">
+      
+           <label for="task-desc">Enter name for task description</label>
+           <textarea id="task-desc" cols="30" rows="4" value="Enter name for task description"></textarea>
+           
+           <div class="btn-wrap"><a class="task-add" href="#"> enter</a></div>
+           
+         </form>
+          <i class="cube-bottom-shadow"></i>
+       </div> 
+     </div>
+      
+      <div class="task-table">
+            
+        
+        <div class="task-item task-common">
+          <div class="cube">
+            <i class="cube-top"></i>     
+            <div class="task-checkbox">
+              <div class="checkbox js-checkbox">
+                <input type="checkbox" id="" >
+               </div> 
+            </div> 
+            <div class="task-status"><p>New</p></div> 
+            <div class="task-layout">
+              <div>
+                 <header class="task-name">
+                   <p>TAsk ask name Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit</p>
+                  <i class="btn-see-desc js-toggle-task-desc" href="#">?</i>
+                 </header> 
+                
+                 <div class="hidden js-task-desc">
+                   <p class="task-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 </div>
+              </div>
+            </div>
+            <div class="task-priority priority-high"><p>12h</p></div>
+            <div class="task-badge"><p>badge</p></div>
+            <i class="cube-bottom-shadow"></i>
+          </div>
+        </div>
+        
+        <div class="task-item task-my">
+          <div class="cube">
+             <i class="cube-top"></i>
+             
+             <div class="task-layout">
+               <div class="col col15">
+                 <div class="nickname">
+                   NickName big NickName big big 
+                 </div>
+               </div>
+               <div class="col col85">
+                 <div>
+                    <header class="task-name">
+                      <p>TAsk ask name Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit lorem ipsum</p> 
+                      <i class="js-toggle-task-desc btn-see-desc" href="#">?</i>
+                    </header> 
+                
+                    <div class="hidden js-task-desc">
+                      <p class=" task-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                 </div>
+                 <div class="progress-wrap">
+                   <div class="progress js-progress"><div class="progress-active" style="width: 20%"></div></div>
+                 </div>
+               </div>
+             </div>
+             
+            <div class="task-priority priority-low"><p>2h</p></div>
+             <div class="task-badge"><p>badge</p></div>
+            <i class="cube-bottom-shadow"></i>
+          </div>
+        </div>
+          
+        <div class="task-item task-common">
+          <div class="cube">
+            <i class="cube-top"></i>
+            <div class="task-checkbox">
+              <div class="checkbox js-checkbox">
+                <input type="checkbox" id="" >
+               </div> 
+            </div>
+            <div class="task-status"><p>New</p></div> 
+            <div class="task-layout">
+              <div>
+                 <header class="task-name">
+                   <p>TAsk ask name Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit</p>
+                  <i class="btn-see-desc" href="#">?</i>
+                 </header> 
+                
+                 <div class="hidden">
+                   <p class="task-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 </div>
+              </div>        
+            </div>
+          
+            <div class="task-priority priority-normal"><p>1200</p></div>
+            <div class="task-badge"><p>badge</p></div>
+            <i class="cube-bottom-shadow"></i>
+          </div>
+        </div>  
+        
+        
+        <div class="task-item task-common">
+          <div class="cube">
+            <i class="cube-top"></i>     
+            <div class="task-checkbox">
+              <div class="checkbox js-checkbox">
+                <input type="checkbox" id="" >
+               </div> 
+            </div> 
+            <div class="task-status"><p>New</p></div> 
+            <div class="task-layout">
+              <div>
+                 <header class="task-name">
+                   <p>TAsk ask name Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit</p>
+                  <i class="btn-see-desc js-toggle-task-desc" href="#">?</i>
+                 </header> 
+                
+                 <div class="hidden js-task-desc">
+                   <p class="task-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 </div>
+              </div>
+            </div>
+            <div class="task-priority priority-high"><p>12h</p></div>
+            <div class="task-badge"><p>badge</p></div>
+            <i class="cube-bottom-shadow"></i>
+          </div>
+        </div>
+        
+        
+        <div class="task-item task-common">
+          <div class="cube">
+            <i class="cube-top"></i>     
+            <div class="task-checkbox">
+              <div class="checkbox js-checkbox">
+                <input type="checkbox" id="" >
+               </div> 
+            </div> 
+            <div class="task-status"><p>New</p></div> 
+            <div class="task-layout">
+              <div>
+                 <header class="task-name">
+                   <p>TAsk ask name Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit</p>
+                  <i class="btn-see-desc js-toggle-task-desc" href="#">?</i>
+                 </header> 
+                
+                 <div class="hidden js-task-desc">
+                   <p class="task-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 </div>
+              </div>
+            </div>
+            <div class="task-priority priority-high"><p>12h</p></div>
+            <div class="task-badge"><p>badge</p></div>
+            <i class="cube-bottom-shadow"></i>
+          </div>
+        </div>
+        
+        
+        <div class="task-item task-common">
+          <div class="cube">
+            <i class="cube-top"></i>     
+            <div class="task-checkbox">
+              <div class="checkbox js-checkbox">
+                <input type="checkbox" id="" >
+               </div> 
+            </div> 
+            <div class="task-status"><p>New</p></div> 
+            <div class="task-layout">
+              <div>
+                 <header class="task-name">
+                   <p>TAsk ask name Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit</p>
+                  <i class="btn-see-desc js-toggle-task-desc" href="#">?</i>
+                 </header> 
+                
+                 <div class="hidden js-task-desc">
+                   <p class="task-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 </div>
+              </div>
+            </div>
+            <div class="task-priority priority-high"><p>12h</p></div>
+            <div class="task-badge"><p>badge</p></div>
+            <i class="cube-bottom-shadow"></i>
+          </div>
+        </div>
+        
+        
+        <div class="task-item task-common">
+          <div class="cube">
+            <i class="cube-top"></i>     
+            <div class="task-checkbox">
+              <div class="checkbox js-checkbox">
+                <input type="checkbox" id="" >
+               </div> 
+            </div> 
+            <div class="task-status"><p>New</p></div> 
+            <div class="task-layout">
+              <div>
+                 <header class="task-name">
+                   <p>TAsk ask name Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit</p>
+                  <i class="btn-see-desc js-toggle-task-desc" href="#">?</i>
+                 </header> 
+                
+                 <div class="hidden js-task-desc">
+                   <p class="task-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                 </div>
+              </div>
+            </div>
+            <div class="task-priority priority-high"><p>12h</p></div>
+            <div class="task-badge"><p>badge</p></div>
+            <i class="cube-bottom-shadow"></i>
+          </div>
+        </div> 
+       
+  </div>   
+  </div>
+</section>
+  
+<footer>
+  <div class="wrapper">
+      
+  </div>  
+</footer>
+
+<script src="js/vendor/jquery-1.9.0.js"></script>
+<script src="js/brainPanic.js"></script>
+
+</body>
+</html>

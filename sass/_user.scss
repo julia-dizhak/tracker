@@ -1,0 +1,15 @@
+@charset "utf-8"; 
+
+.user {
+  text-align: center;
+  background: none repeat scroll 0 0 #FFFFFF;
+      box-shadow: 0 0 15px #A8BDC9;
+      padding: 16px 20px;
+      margin: 0 0 20px 0;
+      font-size: 1.4em;
+  span {
+    color: $color-link;
+    font-size: 1.4em;
+    font-weight: bold;
+  }    
+}
