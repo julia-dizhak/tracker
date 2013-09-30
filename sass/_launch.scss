@@ -11,7 +11,6 @@
   margin-top: 200px;
   margin-left: -400px;
   width: 800px;
-  
 }
 
 .launch {
@@ -39,10 +38,8 @@
          }
     }
     .cube-inner {
-        //background-image: linear-gradient(#69AC43, #008E72);
         background: none repeat scroll 0 0 #94CD4C;
         @include background-image(linear-gradient(left top,#94CD4C,lighten(#94CD4C, 5%)));
- 
         &:hover {
           margin-top: -15px;
         }
@@ -81,6 +78,7 @@
          }
     }
     .cube-inner {
+      background: #0066CC;
       @include background-image(linear-gradient(left top,#0066CC,lighten(#0066CC, 25%)));
       
        // background: none repeat scroll 0 0 #0066CC;
