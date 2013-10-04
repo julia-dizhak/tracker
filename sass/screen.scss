@@ -52,16 +52,22 @@ $color-priority-low: #FFD700;
 @import "footer";
 
 // MAIN
-@import "main";
-@import "task";
-@import "task-add";
-@import "task-my";
+//@import "main";
+//@import "task";
+//@import "task-add";
+//@import "task-my";
 
 @import "launch";
 
-@import "popup";
-@import "awards";
-@import "link-page";
+//@import "popup";
+//@import "awards";
+//@import "link-page";
 
-@import "user";
+//@import "user";
 @import "mediaqueries";
+
+@import "task-model";
+
+@import "test";
+
+
