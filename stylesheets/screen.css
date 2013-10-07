@@ -730,7 +730,7 @@ body {
   font-size: 1.3em;
   line-height: 1.3;
   color: #666;
-  padding: 3px 0;
+  padding: 3px 0 5px;
 }
 /* line 135, ../sass/_task-model.scss */
 .project .task-layout .task-status {
