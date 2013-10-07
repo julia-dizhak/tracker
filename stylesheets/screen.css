@@ -787,3 +787,158 @@ body {
   color: #fff;
   font-size: 1.1em;
 }
+/* line 179, ../sass/_task-model.scss */
+.project .form-task-add {
+  margin: 40px 0 0;
+  padding: 0 40px 0 20px;
+  position: relative;
+}
+/* line 184, ../sass/_task-model.scss */
+.project .form-task-add .wrap {
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2);
+  padding: 25px 40px;
+}
+/* line 188, ../sass/_task-model.scss */
+.project .form-task-add form {
+  padding: 10px 0 0 0;
+}
+/* line 191, ../sass/_task-model.scss */
+.project .form-task-add .cube-top {
+  display: block;
+  border-bottom: 11px solid #D3D9DC;
+  position: relative;
+  z-index: 1;
+  border-left: 19px dashed rgba(0, 0, 0, 0);
+  border-right: 19px dashed rgba(0, 0, 0, 0);
+  clear: both;
+  margin: -37px -42px 10px;
+}
+/* line 200, ../sass/_task-model.scss */
+.project .form-task-add .cube-top:after {
+  content: "";
+  height: 1px;
+  left: -4px;
+  position: absolute;
+  top: 17px;
+  width: 101%;
+}
+/* line 209, ../sass/_task-model.scss */
+.project .form-task-add .cube-bottom-shadow {
+  bottom: -42px;
+  height: 42px;
+  margin: 0 -39px;
+  position: absolute;
+  width: 94%;
+  z-index: 3;
+}
+/* line 216, ../sass/_task-model.scss */
+.project .form-task-add .cube-bottom-shadow:before {
+  background: url("../images/static/shadow.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  content: "";
+  height: 42px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100px;
+}
+/* line 225, ../sass/_task-model.scss */
+.project .form-task-add .cube-bottom-shadow:after {
+  background: url("../images/static/shadow.png") no-repeat scroll 100% 0 rgba(0, 0, 0, 0);
+  content: "";
+  height: 42px;
+  left: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 235, ../sass/_task-model.scss */
+.project .form-task-add label {
+  color: #666;
+  display: block;
+  font-size: 1.6em;
+  margin: 0 0 5px;
+}
+/* line 241, ../sass/_task-model.scss */
+.project .form-task-add input[type="submit"] {
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+  background: none repeat scroll 0 0 #94CD4C;
+  padding: 8px 35px 8px;
+  position: relative;
+  color: #fff;
+  line-height: 1;
+  font-size: 1.4em;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.4);
+  width: 150px;
+  margin: 20px auto 0;
+}
+/* line 257, ../sass/_task-model.scss */
+.project .form-task-add input[type="text"], .project .form-task-add input[type="number"] {
+  color: #000;
+  background: #fff;
+  display: block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 1.4em;
+  line-height: 1;
+  margin: 0 0 20px 0;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2) inset;
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-radius: 10px 10px 10px 10px;
+  padding: 7px 12px;
+}
+/* line 61, ../sass/_mixin.scss */
+.project .form-task-add input[type="text"].placeholder, .project .form-task-add input[type="number"].placeholder {
+  color: black;
+}
+/* line 64, ../sass/_mixin.scss */
+.project .form-task-add input[type="text"]:-moz-placeholder, .project .form-task-add input[type="number"]:-moz-placeholder {
+  color: black;
+}
+/* line 67, ../sass/_mixin.scss */
+.project .form-task-add input[type="text"]::-webkit-input-placeholder, .project .form-task-add input[type="number"]::-webkit-input-placeholder {
+  color: black;
+}
+/* line 271, ../sass/_task-model.scss */
+.project .form-task-add input[type="text"] {
+  width: 100%;
+}
+/* line 274, ../sass/_task-model.scss */
+.project .form-task-add input[type="number"] {
+  width: 250px;
+}
+/* line 277, ../sass/_task-model.scss */
+.project .form-task-add textarea {
+  resize: none;
+  border: none;
+  color: #000;
+  background: #fff;
+  display: block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 1.4em;
+  line-height: 1;
+  margin: 0 0 10px 0;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2) inset;
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-radius: 10px 10px 10px 10px;
+  padding: 7px 12px;
+  width: 100%;
+}
+/* line 61, ../sass/_mixin.scss */
+.project .form-task-add textarea.placeholder {
+  color: black;
+}
+/* line 64, ../sass/_mixin.scss */
+.project .form-task-add textarea:-moz-placeholder {
+  color: black;
+}
+/* line 67, ../sass/_mixin.scss */
+.project .form-task-add textarea::-webkit-input-placeholder {
+  color: black;
+}

@@ -11,7 +11,8 @@ $(function(){
     ];  
     
     var project = $('<div />').appendTo('body').addClass('project'),
-         projectHeader = $('<header />').appendTo(project);
+        projectHeader = $('<header />').appendTo(project);
+        //btnAdd = $('<a class="btn-add" />').text('create task').appendTo(project);
         
     project.wrap('<div class="wrapper"></div>'); 
     projectHeader.text('projectHeader');   
@@ -44,17 +45,44 @@ $(function(){
     });
    
     
-    function createTask() {
-      
-    }
-    
-    function deleteTask(item) {
+    /*function deleteTask(item) {
       console.log(item);
-    }
+    }*/
     
     $('.btn-delete').on('click',function(){
       $(this).closest('.task-item').hide('slow', function(){ $(this).closest('.task-item').remove(); });
     });
+    
+    function addTaskForm(form) {
+      form = '<div class=\'form-task-add\'>' +
+                          '<div class=\'wrap\'>' +
+                            '<i class=\'cube-top\'></i>'+
+                            '<form>' +  
+                            '<label>' + 'Enter name for task' + '</label>' +
+                            '<input id="task-name" type="text" />' +
+                            '<label>' + 'Enter description for task' + '</label>' +
+                            '<textarea type="text" rows="4" cols="30">' + '</textarea>' + 
+                            '<input class="btn-add" type="submit" value="create task" />'+
+                            '</form>' +
+                            '<i class=\'cube-bottom\'></i>'+
+                          '</div>' +
+                      '</div>';  
+                        
+      $(form).insertAfter(projectHeader);
+      
+      var taskName = $(form).find('#task-name').val();
+      console.log(taskName);
+      
+      return form;
+    }   
+    
+    addTaskForm();
+    
+        
+    $('.btn-add').on('click',function(){
+     
+     
+    }); 
         
 })();
   

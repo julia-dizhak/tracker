@@ -175,4 +175,123 @@
       }
     }
   }
+  
+  .form-task-add {
+    //display: none;
+    margin: 40px 0 0;
+    padding: 0 40px 0 20px;
+    position: relative;
+    .wrap {
+      box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2);
+      padding: 25px 40px;
+    }
+    form {
+      padding: 10px 0 0 0;
+    }
+    .cube-top {
+      display: block;
+      border-bottom: 11px solid #D3D9DC;
+      position: relative;
+      z-index: 1;
+      border-left: 19px dashed rgba(0, 0, 0, 0);
+      border-right: 19px dashed rgba(0, 0, 0, 0);
+      clear: both;
+      margin: -37px -42px 10px;
+       &:after {
+         content: "";
+         height: 1px;
+         left: -4px;
+         position: absolute;
+         top: 17px;
+         width: 101%;
+      }
+    }
+    .cube-bottom-shadow {
+      bottom: -42px;
+      height: 42px;
+      margin: 0 -39px;
+      position: absolute;
+      width: 94%;
+      z-index: 3;
+      &:before {
+        background: url("../images/static/shadow.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        content: "";
+        height: 42px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100px;
+      }
+      &:after {
+        background: url("../images/static/shadow.png") no-repeat scroll 100% 0 rgba(0, 0, 0, 0);
+         content: "";
+         height: 42px;
+         left: 100px;
+         position: absolute;
+         right: 0;
+         top: 0;
+      }
+    }
+    label {
+      color: #666;
+      display: block;
+      font-size: 1.6em;
+      margin: 0 0 5px;
+    }
+    input[type="submit"] {
+      display:block;
+      text-transform: uppercase;
+      text-align: center;
+      background: none repeat scroll 0 0 #94CD4C;
+      padding: 8px 35px 8px;
+      position: relative;
+      color: #fff;
+      line-height: 1;
+      font-size: 1.4em;
+      font-weight: 600;
+      border-radius: 12px;
+      box-shadow: 0 0 1px 0 rgba(0,0,0, 0.4);
+      width: 150px;
+      margin: 20px auto 0;
+    }
+    input[type="text"], input[type="number"] {
+      @include input-placeholder(#000);
+      color: #000;
+      background: #fff;
+      display: block;
+      @include box-sizing(border-box);
+      font-size: 1.4em;
+      line-height: 1;
+      margin: 0 0 20px 0;
+      box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2) inset;
+      background: none repeat scroll 0 0 #FFFFFF;
+      border-radius: 10px 10px 10px 10px;
+      padding: 7px 12px;
+    }  
+    input[type="text"] {
+      width: 100%;
+    }
+    input[type="number"] {
+      width: 250px;
+    }
+    textarea {
+      resize: none;
+      border: none;
+      @include input-placeholder(#000);
+      color: #000;
+      background: #fff;
+      display: block;
+      @include box-sizing(border-box);
+      font-size: 1.4em;
+      line-height: 1;
+      margin: 0 0 10px 0;
+      box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2) inset;
+      background: none repeat scroll 0 0 #FFFFFF;
+      border-radius: 10px 10px 10px 10px;
+      padding: 7px 12px;
+      width: 100%; 
+    } 
+  }
+  
+  
 }
