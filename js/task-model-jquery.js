@@ -22,12 +22,12 @@ $(function(){
                           '<div class=\'cube\'>' +
                             '<i class=\'cube-top\'></i>'+
                             '<div class=\'task-layout\'>' +  
-                            '<div class=\'task-name\'>' + item.name + '</div>' +
-                            '<div class=\'task-desc\'>' + item.desc + '</div>' +
-                            '<div class=\'task-status\'>' + '<p>' + item.status + '</p>' + '</div>' +
-                            '<a href="#" class=\'btn-delete\'>' + 'delete task' + '</a>' +
-                            '</div>'
-                            '<i class=\'cube-bottom\'></i>'+
+                              '<div class=\'task-name\'>' + item.name + '</div>' +
+                              '<div class=\'task-desc\'>' + item.desc + '</div>' +
+                              '<div class=\'task-status\'>' + '<p>' + item.status + '</p>' + '</div>' +
+                              '<a href="#" class=\'btn-delete\'>' + 'delete task' + '</a>' +
+                            '</div>' +
+                            '<i class=\'cube-bottom-shadow\'></i>'+
                           '</div>' +
                       '</div>';  
                         
@@ -64,7 +64,7 @@ $(function(){
                             '<textarea type="text" rows="4" cols="30">' + '</textarea>' + 
                             '<input class="btn-add" type="submit" value="create task" />'+
                             '</form>' +
-                            '<i class=\'cube-bottom\'></i>'+
+                            '<i class=\'cube-bottom-shadow\'></i>'+
                           '</div>' +
                       '</div>';  
                         
