@@ -17,6 +17,16 @@ $(function(){
       return o;
   };
   
+  var generateUUID = function() {
+      var d = new Date().getTime();
+      var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+          var r = (d + Math.random()*16)%16 | 0;
+          d = Math.floor(d/16);
+          return (c=='x' ? r : (r&0x7|0x8)).toString(16);
+      });
+      return uuid;
+  };
+  
   Task = {};
   Task.el = $('.wrapper .project');
   
@@ -41,6 +51,8 @@ $(function(){
     event.preventDefault();
     var form = $(event.target);
     var task_data = form.serializeObject();
+    task_data.id = generateUUID();
+    
     form.find('#task-name').val('');
     form.find('#task-desc').val('');
     
@@ -50,7 +62,7 @@ $(function(){
   };
 
   Task.template = _.template(
-    '<div class=\'task-item\'>' +
+    '<div data-id="<%= id %>" class=\'task-item\'>' +
         '<div class=\'cube\'>' +
           '<i class=\'cube-top\'></i>'+
           '<div class=\'task-layout\'>' +  
@@ -67,16 +79,17 @@ $(function(){
   Task.renderItem = function(item){
     var res = Task.template(item);
     $(res).insertAfter('.form-task-add');
+
+    $('.btn-delete').on('click', Task.removeItem);
   };
-  
+
   Task.removeItem = function(event){
      event.preventDefault();
-     var button = $(event.target);
+     var button = $(event.target),
+     task_id = button.closest('div[data-id]').data('id');
      button.closest('.task-item').hide('slow', function(){ $(this).closest('.task-item').remove(); });
-     
-     // TODO, delete item from Tasks list
-     
-     
+
+     Tasks.pop(_.findWhere(Tasks, {id: task_id}));
   }
 
   Task.init = function(){
