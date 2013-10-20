@@ -37,6 +37,12 @@ $(function(){
                 '<form method="post" class=\'form-task-add-form\'>' +  
                 '<label>' + 'Enter name for task' + '</label>' +
                 '<input name="name" id="task-name" type="text" />' +
+                '<label>' + 'Status' + '</label>' +
+                '<select name="status" id="task-status">' +
+                '<option vaule="todo">todo</option>'+
+                '<option vaule="inprogress">inprogress</option>'+
+                '<option vaule="done">done</option>'+
+                '</select>' +
                 '<label>' + 'Enter description for task' + '</label>' +
                 '<textarea id="task-desc" name="desc" type="text" rows="4" cols="30">' + '</textarea>' + 
                 '<input class="btn-add" type="submit" value="create task" />'+
@@ -68,7 +74,7 @@ $(function(){
           '<div class=\'task-layout\'>' +  
             '<div class=\'task-name\'> <%= name %> </div>' +
             '<div class=\'task-desc\'> <%= desc %>  </div>' +
-            '<div class=\'task-status\'>' + '<p></p>' + '</div>' +
+            '<div class=\'task-status <%= status %>\'>' + '<p><%= status %></p>' + '</div>' +
             '<a href="javascript:;" class=\'btn-delete\'>' + 'delete task' + '</a>' +
           '</div>' +
           '<i class=\'cube-bottom-shadow\'></i>'+
