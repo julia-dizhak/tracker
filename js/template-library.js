@@ -67,13 +67,26 @@ $(function(){
     Task.renderItem(task_data);
   };
 
+  Task.editContent = function(event){
+    // update Tasks list data
+    _target = $(event.target);
+
+    var task_id = _target.closest('div[data-id]').data('id'),
+    _task = _.findWhere(Tasks, {id: task_id});
+
+    // get access for element of array by position
+    Tasks[Tasks.indexOf(_task)].name = $('div[data-id='+task_id+']').find('.task-name').text();
+    Tasks[Tasks.indexOf(_task)].desc = $('div[data-id='+task_id+']').find('.task-desc').text();
+
+  }
+
   Task.template = _.template(
     '<div data-id="<%= id %>" class=\'task-item\'>' +
         '<div class=\'cube\'>' +
           '<i class=\'cube-top\'></i>'+
           '<div class=\'task-layout\'>' +  
-            '<div class=\'task-name\'> <%= name %> </div>' +
-            '<div class=\'task-desc\'> <%= desc %>  </div>' +
+            '<div class=\'task-name\' contentEditable="true"> <%= name %> </div>' +
+            '<div class=\'task-desc\' contentEditable="true"> <%= desc %>  </div>' +
             '<div class=\'task-status <%= status %>\'>' + '<p><%= status %></p>' + '</div>' +
             '<a href="javascript:;" class=\'btn-delete\'>' + 'delete task' + '</a>' +
           '</div>' +
@@ -87,6 +100,8 @@ $(function(){
     $(res).insertAfter('.form-task-add');
 
     $('.btn-delete').on('click', Task.removeItem);
+    $('.task-name').on('blur', Task.editContent);
+    $('.task-desc').on('blur', Task.editContent);
   };
 
   Task.removeItem = function(event){
