@@ -1,5 +1,21 @@
 $(function(){
   
+	(function(){
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+
+    var yyyy = today.getFullYear();
+    if( dd<10 ){ 
+      dd='0'+dd 
+    } 
+    if (mm<10) {
+      mm='0'+mm 
+    } 
+    today = mm+'.'+dd+'.'+yyyy;
+    $('#today').html(today);
+	})();
+  
   $.fn.serializeObject = function() {
       var o = {};
       var a = this.serializeArray();
@@ -42,10 +58,10 @@ $(function(){
                 '<label>' + 'Enter name for task' + '</label>' +
                 '<input name="name" id="task-name" type="text" />' +
                 '<label>' + 'Status' + '</label>' +
-                '<select name="status" id="task-status">' +
-                '<option vaule="todo">todo</option>'+
-                '<option vaule="inprogress">inprogress</option>'+
-                '<option vaule="done">done</option>'+
+                '<select name="status" id="task-status" class=\"select-js\">' +
+                 '<option value="todo">todo</option>'+
+                 '<option value="inprogress">inprogress</option>'+
+                 '<option value="done">done</option>'+
                 '</select>' +
                 '<label>' + 'Enter description for task' + '</label>' +
                 '<textarea id="task-desc" name="desc" type="text" rows="4" cols="30">' + '</textarea>' + 
@@ -54,7 +70,9 @@ $(function(){
                 '<i class=\'cube-bottom-shadow\'></i>'+
               '</div>' +
           '</div>';
-          Task.el.append(form);
+    
+    Task.el.append(form);
+    $('.select-js').select2();
   };
   
   Task.submitForm = function(event){
