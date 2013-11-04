@@ -1,7 +1,6 @@
 $(function(){
   
-  $.fn.serializeObject = function()
-  {
+  $.fn.serializeObject = function() {
       var o = {};
       var a = this.serializeArray();
       $.each(a, function() {
@@ -29,6 +28,11 @@ $(function(){
   
   Task = {};
   Task.el = $('.wrapper .project');
+  
+  Task.addTaskHead = function(head) {
+    head = '<h3 class=\'task-head\'>' + 'Tasks for today' + '</h3>';
+    Task.el.append(head);
+  } 
   
   Task.addTaskForm = function addTaskForm(form) {
     form = '<div class=\'form-task-add\'>' +
@@ -114,14 +118,14 @@ $(function(){
   }
 
   Task.init = function(){
+   
     Task.addTaskForm();
+    //$(Task.addTaskHead()).insertBefore('.form-task-add');
     $('.form-task-add-form').on('submit', Task.submitForm);
+    
     // initial render of all tasks
     _.each(Tasks, this.renderItem);
-     $('.btn-delete').on('click', Task.removeItem);
-
-    
-    
+    $('.btn-delete').on('click', Task.removeItem);
   }
 
   Task.init();

@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+body {
+	background: #fff;
+	font: 100 62.5%/1.2 'Helvetica', Arial, Sans-serif;
+  color: #666;
+  /*padding: 0 10px;*/
+}
+
+.wrapper {
+  /*width: 980px;*/
+  margin: 0 auto;
+  padding: 40px 0;
+}
+.column, 
+.columns {
+    float: left;
+}
+.cf:before, .cf:after {
+  display: table;
+  content: "";
+  clear:both;
+}
+.cf {
+  clear:both;
+}
+.three {
+    width: 33.33%;
+}
+
+.four {
+    width: 25%;
+}
+.row:after {
+    clear: both;
+    content:"";
+    display: block;
+}
+
+.project {
+  margin: 2px 0;
+  padding: 0 10px;
+}
+.project-name {
+  border-bottom: 1px solid #666;
+  margin: 3px 0 10px 0;
+  font-size: 1.7em;
+  font-weight: bold;
+  padding: 4px 0;
+}
+
+.task {
+  margin: 3px 5px 3px 0; 
+  padding: 10px;
+  /*display: inline-block;
+  vertical-align: top;  */
+  float: left;
+  background: #eaeaea;
+  width: 44%;
+}
+.task:last-child {
+  margin-right: 0; 
+} 
+.task-name {
+  border-bottom: 1px solid #666;
+  font-size: 1.4em;
+  padding: 2px 0;
+  margin: 0 0 5px 0;
+  text-overflow: ellipsis;
+  height: 17px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.task-description {
+   font-size: 1.3em;
+}
+
+.columns-last .task:last-child {
+  margin-right: 0;
+  width: 44%;
+}
+
+.todo .task {
+ box-shadow: 0 0 1px 0 yellow inset; 
+}
+.inprogress .task {
+  box-shadow: 0 0 1px 0 red inset; 
+}
+.done .task {
+  box-shadow: 0 0 1px 0 green inset; 
+}
