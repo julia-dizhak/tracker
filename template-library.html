@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" manifest="cache.manifest"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -11,7 +11,7 @@
     <title>Template Library</title>
     
 	  <link media="screen, projection" rel="stylesheet" href="stylesheets/normalize.css">
-    <link media="print" rel="stylesheet" href="stylesheets/print.css">
+    <!--<link media="print" rel="stylesheet" href="stylesheets/print.css">-->
 	  <link media="screen, projection" rel="stylesheet" href="stylesheets/screen.css">
     
     <!--[if lt IE 9]>
@@ -31,14 +31,10 @@
     </div>
     
     <header class="head">
-          <!--<div class="date-today">
-            <time datetime="">10</time>
-          </div>-->
       
           <div class="great">
             <p>Today is <time id="today"></time> </p>
             <p>What should you do today?</p>
-            <!--<time>data</time>-->
           </div>
         
           <!--<div>
@@ -67,5 +63,6 @@
 <script src="js/tasks-data.js"></script>
 
 <script src="js/template-library.js"></script>
+
 </body>
 </html>  
