@@ -111,6 +111,7 @@ $(function(){
             '<div class=\'task-desc\' contentEditable="true"> <%= desc %>  </div>' +
             '<div class=\'task-status <%= status %>\'>' + '<p><%= status %></p>' + '</div>' +
             '<a href="javascript:;" class=\'btn-delete\'>' + 'delete task' + '</a>' +
+            '<a href="javascript:;" class=\'btn-change-status\'>' + 'change status of task' + '</a>' +
           '</div>' +
           '<i class=\'cube-bottom-shadow\'></i>'+
         '</div>' +
@@ -144,7 +145,34 @@ $(function(){
     // initial render of all tasks
     _.each(Tasks, this.renderItem);
     $('.btn-delete').on('click', Task.removeItem);
+    
+    Task.offlineEvent();
   }
+  
+  Task.offlineEvent = function(){
+    
+    //Invalidate cache
+    window.addEventListener('load', function(e) {
+      if (window.applicationCache) {
+        window.applicationCache.addEventListener('updateready', function(e) {
+            if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+              // Browser downloaded a new app cache.
+              // Swap it in and reload the page to get the new hotness.
+              window.applicationCache.swapCache();
+              if (confirm('A new version of this site is available. Load it?')) {
+                window.location.reload();
+              }
+            } else {
+              // Manifest didn't changed. Nothing new to server.
+            }
+        }, false);
+      }
+    }, false);
 
+    $(document).on('offline online', function (event) {
+        alert('You are ' + event.type + '!');
+    });
+  }
   Task.init();
+
 });

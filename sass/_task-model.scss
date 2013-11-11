@@ -3,21 +3,25 @@
 .nav {
   @include clearfix;
   margin: 0 0 25px 0;
+  //background: #D3D9DC;
+    //  box-shadow: 0 0 1px #A8BDC9;
+         padding: 12px 15px;
   nav {
     float: right;
   }
   a {
     font-size: 1.2em;
+    color: #000;
     text-transform: uppercase;
     float: left;
     display: block; 
-    
-    background: none repeat scroll 0 0 #FFFFFF;
-    box-shadow: 0 0 15px #A8BDC9;
-    padding: 18px 15px;
+    border-bottom: 1px dashed #000;
     margin-right: 15px;
     &:last-child {
       margin-right: 0;
+    }
+    &:hover {
+      border-bottom: 1px solid transparent;
     }
   }
 }
@@ -36,6 +40,82 @@
   }
 }
 
+.user {
+  margin-bottom: 20px;
+  @include clearfix;
+  .profile {
+    float: left;
+    margin-right: 20px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 0 15px #A8BDC9;
+    padding: 25px 30px 40px;
+        
+    .avatar {
+      box-shadow: 0 0 0 1px rgba(0,0,0,.1);
+      border-radius: 5px;
+      @include inline-block;
+      
+      width: 60px;
+      height: 60px;
+      overflow: hidden;
+      img {
+        border-radius: 5px;
+        overflow: hidden;
+        @include inline-block(bottom);
+      }
+    }
+    .name {
+      margin:0 20px;
+      font-size: 1.8em;
+      color: #000;
+      @include inline-block;
+    }
+  }
+
+  .progress {
+    float: left;
+    margin-right: 20px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 0 15px #A8BDC9;
+    padding: 25px 30px 40px;
+    h4 {
+      font-size: 1.7em;
+      color: #000;
+    }
+    table {
+      margin: 20px 0 0 0;
+      width: 500px;
+      border-top: 1px solid #D3D9DC;
+      th {
+        //width: 25%;
+        //text-align: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        padding: 4px 5px 0px;
+      }
+      td {
+        vertical-align: top;
+        //width: 25%;
+        font-size: 1.2em;
+        padding: 7px 5px;
+      }
+      .line {
+        height: 1px;
+        border-bottom: 1px solid #D3D9DC;
+      }
+    }
+  }
+  
+  .new-task {
+    float: right;
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 0 15px #A8BDC9;
+    padding: 25px 30px 40px;
+    a {
+      
+    }
+  }
+}
 
 .head {
   background: none repeat scroll 0 0 #FFFFFF;
@@ -73,7 +153,7 @@
   }
 
   .btn-add {
-    display:block;
+    display: block;
     width: 100px;
     margin: auto;
     text-transform: uppercase;
@@ -88,7 +168,8 @@
     box-shadow: 0 0 1px 0 rgba(0,0,0, 0.4);
   }
   .btn-delete {
-    background: $task-delete;
+    //background: $task-delete;
+    background: red;
     color: #fff;
     line-height: 1;
     font-size: 1.2em;
