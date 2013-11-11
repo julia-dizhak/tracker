@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+body {
+  //background: red;  
+}
+
 .nav {
   @include clearfix;
   margin: 0 0 25px 0;
@@ -184,6 +188,22 @@
       position: absolute;
       content: '';
     }
+  }
+  .btn-change-status {
+    //background: #0ff;
+    background: #000080;
+    margin-left: 3px;
+    color: #fff;
+    line-height: 1;
+    font-size: 1.2em;
+    @include inline-block;
+    padding: 4px 5px;
+    border-radius: 2px;
+    
+    position: relative;
+    top: 13px;
+    margin-left: -69px;
+    
   }
   
   .task-head {

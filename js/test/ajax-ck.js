@@ -1,0 +1,1 @@
+$(function(){$.ajax({url:"data.js",type:"GET",dataType:"json"}).done(function(e){$(".item").text(e.message)}).fail(function(){console.log("fail");console.log(arguments)})});

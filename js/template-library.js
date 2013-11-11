@@ -111,7 +111,7 @@ $(function(){
             '<div class=\'task-desc\' contentEditable="true"> <%= desc %>  </div>' +
             '<div class=\'task-status <%= status %>\'>' + '<p><%= status %></p>' + '</div>' +
             '<a href="javascript:;" class=\'btn-delete\'>' + 'delete task' + '</a>' +
-            '<a href="javascript:;" class=\'btn-change-status\'>' + 'change status of task' + '</a>' +
+            '<a href="javascript:;" class=\'btn-change-status\'>' + 'change status' + '</a>' +
           '</div>' +
           '<i class=\'cube-bottom-shadow\'></i>'+
         '</div>' +
