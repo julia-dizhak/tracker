@@ -81,7 +81,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 50, icons/*.png */
-.icons-sprite, .checkbox .unchecked, .checkbox .checked {
+.icons-sprite {
   background: url('../images/icons-s5e07dd2c7f.png') no-repeat;
 }
 
@@ -181,134 +181,181 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   clear: both;
 }
 
-/* line 6, ../sass/_common.scss */
+/* line 4, ../sass/_common.scss */
 html, body {
   height: 100%;
 }
 
-/* line 9, ../sass/_common.scss */
+/* line 7, ../sass/_common.scss */
 .layout-left {
   float: left;
 }
 
-/* line 12, ../sass/_common.scss */
+/* line 10, ../sass/_common.scss */
 .left {
   float: left;
 }
 
-/* line 15, ../sass/_common.scss */
+/* line 13, ../sass/_common.scss */
 .layout-right {
   float: right;
 }
 
-/* line 18, ../sass/_common.scss */
+/* line 16, ../sass/_common.scss */
 .right {
   float: right;
 }
 
-/* line 21, ../sass/_common.scss */
+/* line 19, ../sass/_common.scss */
 a {
   text-decoration: none;
   color: #666;
 }
 
-/* line 25, ../sass/_common.scss */
+/* line 23, ../sass/_common.scss */
 a:focus {
   outline: none;
 }
 
-/* line 28, ../sass/_common.scss */
+/* line 26, ../sass/_common.scss */
 input {
   border: none;
   padding: 0;
 }
 
-/* line 33, ../sass/_common.scss */
+/* line 31, ../sass/_common.scss */
 input:focus,
 textarea:focus {
   outline: none;
   border: none;
 }
 
-/* line 38, ../sass/_common.scss */
+/* line 36, ../sass/_common.scss */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* line 42, ../sass/_common.scss */
+/* line 40, ../sass/_common.scss */
 button {
   border: none;
   box-shadow: none;
 }
 
-/* line 46, ../sass/_common.scss */
+/* line 44, ../sass/_common.scss */
 label {
   cursor: pointer;
 }
 
-/* line 51, ../sass/_common.scss */
-body {
-  background: #fff;
-  font: 100 62.5%/1.2 'Helvetica', Arial, Sans-serif;
-  color: #666;
-  background-color: #F4F7F1;
-}
-
-/* line 60, ../sass/_common.scss */
-.wrapper {
-  width: 1000px;
-  margin: 0 auto;
-  position: relative;
-}
-
-/*CHECKBOX*/
-/* line 69, ../sass/_common.scss */
-.checkbox .checked,
-.checkbox .unchecked {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 4px;
-  text-decoration: none;
-}
-
-/* line 77, ../sass/_common.scss */
-.checkbox .unchecked {
-  background-position: 0 -20px;
-}
-
-/* line 80, ../sass/_common.scss */
-.checkbox .checked {
-  background-position: 0 0;
-}
-
-/* line 83, ../sass/_common.scss */
-.checkbox .checkbox-text {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 1.3em;
-  color: #666;
-}
-
 /* line 3, ../sass/_launch.scss */
-.launch {
+.cube-inner {
+  background-color: #FFFFFF;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 47px 29px -27px rgba(146, 161, 173, 0.9);
+  height: 100%;
+  position: relative;
+  -webkit-transition: margin-top 0.5s ease;
+  -webkit-transition-delay: 0s;
+  -moz-transition: margin-top 0.5s ease 0s;
+  -o-transition: margin-top 0.5s ease 0s;
+  transition: margin-top 0.5s ease 0s;
+  width: 100%;
+}
+
+/* line 14, ../sass/_launch.scss */
+.cube-cover {
+  height: 100%;
+  opacity: 0.7;
+  position: absolute;
+  width: 100%;
+}
+
+/* line 20, ../sass/_launch.scss */
+.cube-shadow {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  box-shadow: -14px 0 7px -2px rgba(0, 0, 0, 0.2) inset;
+}
+
+/* line 26, ../sass/_launch.scss */
+.cube-border {
+  display: block;
+  border-bottom: 11px solid #D3D9DC;
+  border-left: 18px dashed rgba(0, 0, 0, 0);
+  border-right: 18px dashed rgba(0, 0, 0, 0);
   position: relative;
 }
-
-/* line 7, ../sass/_launch.scss */
-.launch-pos {
+/* line 32, ../sass/_launch.scss */
+.cube-border:after {
+  box-shadow: 0 -4px 4px 1px rgba(255, 255, 255, 0.4);
+  content: "";
+  height: 1px;
+  left: -3%;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-top: 200px;
-  margin-left: -400px;
-  width: 800px;
+  top: 10px;
+  width: 106%;
 }
 
-/* line 17, ../sass/_launch.scss */
+/* line 43, ../sass/_launch.scss */
+.cube-profile {
+  display: block;
+  height: 180px;
+  position: relative;
+  z-index: 1;
+  width: 200px;
+  /*&:hover {
+    cursor: default;
+  }*/
+}
+/* line 55, ../sass/_launch.scss */
+.cube-profile .cube-data {
+  text-align: center;
+  padding: 30px 15px 10px;
+}
+/* line 59, ../sass/_launch.scss */
+.cube-profile .cube-inner {
+  background: none repeat scroll 0 0 #94CD4C;
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #94cd4c), color-stop(100%, #a0d360));
+  background-image: -webkit-linear-gradient(left top, #94cd4c, #a0d360);
+  background-image: -moz-linear-gradient(left top, #94cd4c, #a0d360);
+  background-image: -o-linear-gradient(left top, #94cd4c, #a0d360);
+  background-image: linear-gradient(left top, #94cd4c, #a0d360);
+  /*&:hover {
+      margin-top: -15px;
+  }*/
+}
+/* line 67, ../sass/_launch.scss */
+.cube-profile .cube-border {
+  top: -165px;
+}
+
+/* line 72, ../sass/_launch.scss */
+.cube-form {
+  float: left;
+  margin-left: 30px;
+  margin-top: -23px;
+  width: 700px;
+  position: relative;
+  z-index: 2;
+}
+/* line 79, ../sass/_launch.scss */
+.cube-form .cube-inner {
+  background: #fff;
+}
+/* line 82, ../sass/_launch.scss */
+.cube-form .cube-border {
+  top: -271px;
+}
+/* line 85, ../sass/_launch.scss */
+.cube-form .cube-shadow {
+  box-shadow: 14px 0 7px -2px rgba(0, 0, 0, 0.2) inset, -14px 0 7px -2px rgba(0, 0, 0, 0.2) inset;
+}
+
+/* line 91, ../sass/_launch.scss */
 .launch .cube1 {
   display: block;
   margin-top: 33px;
@@ -317,11 +364,11 @@ body {
   z-index: 1;
   width: 248px;
 }
-/* line 24, ../sass/_launch.scss */
+/* line 98, ../sass/_launch.scss */
 .launch .cube1:hover {
   cursor: default;
 }
-/* line 27, ../sass/_launch.scss */
+/* line 101, ../sass/_launch.scss */
 .launch .cube1 .cube-text {
   color: #FFFFFF;
   font-weight: bold;
@@ -329,12 +376,12 @@ body {
   position: absolute;
   top: 67px;
 }
-/* line 35, ../sass/_launch.scss */
+/* line 109, ../sass/_launch.scss */
 .launch .cube1 .cube-text h1 {
   color: #fff;
   font-size: 3.6em;
 }
-/* line 40, ../sass/_launch.scss */
+/* line 114, ../sass/_launch.scss */
 .launch .cube1 .cube-inner {
   background: none repeat scroll 0 0 #94CD4C;
   background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #94cd4c), color-stop(100%, #a0d360));
@@ -343,11 +390,11 @@ body {
   background-image: -o-linear-gradient(left top, #94cd4c, #a0d360);
   background-image: linear-gradient(left top, #94cd4c, #a0d360);
 }
-/* line 43, ../sass/_launch.scss */
+/* line 117, ../sass/_launch.scss */
 .launch .cube1 .cube-inner:hover {
   margin-top: -15px;
 }
-/* line 48, ../sass/_launch.scss */
+/* line 122, ../sass/_launch.scss */
 .launch .cube2 {
   display: block;
   height: 340px;
@@ -357,11 +404,11 @@ body {
   width: 345px;
   z-index: 3;
 }
-/* line 56, ../sass/_launch.scss */
+/* line 130, ../sass/_launch.scss */
 .launch .cube2:hover {
   cursor: default;
 }
-/* line 59, ../sass/_launch.scss */
+/* line 133, ../sass/_launch.scss */
 .launch .cube2 .cube-text {
   color: #FFFFFF;
   font-weight: 100;
@@ -371,22 +418,22 @@ body {
   top: 32px;
   width: 309px;
 }
-/* line 67, ../sass/_launch.scss */
+/* line 141, ../sass/_launch.scss */
 .launch .cube2 .cube-text p {
   font-family: "Lobster",'Helvetica', Arial, Sans-serif;
   font-size: 2.2em;
   margin: 0 0 24px 0;
 }
-/* line 71, ../sass/_launch.scss */
+/* line 145, ../sass/_launch.scss */
 .launch .cube2 .cube-text p strong {
   cursor: pointer;
   border-bottom: 1px solid #fff;
 }
-/* line 74, ../sass/_launch.scss */
+/* line 148, ../sass/_launch.scss */
 .launch .cube2 .cube-text p strong:hover {
   border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
-/* line 80, ../sass/_launch.scss */
+/* line 154, ../sass/_launch.scss */
 .launch .cube2 .cube-inner {
   background: #0066CC;
   background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #0066cc), color-stop(100%, #4da6ff));
@@ -395,11 +442,11 @@ body {
   background-image: -o-linear-gradient(left top, #0066cc, #4da6ff);
   background-image: linear-gradient(left top, #0066cc, #4da6ff);
 }
-/* line 85, ../sass/_launch.scss */
+/* line 159, ../sass/_launch.scss */
 .launch .cube2 .cube-inner:hover {
   margin-top: -15px;
 }
-/* line 90, ../sass/_launch.scss */
+/* line 164, ../sass/_launch.scss */
 .launch .cube3 {
   display: block;
   height: 222px;
@@ -409,22 +456,22 @@ body {
   width: 326px;
   z-index: 2;
 }
-/* line 98, ../sass/_launch.scss */
+/* line 172, ../sass/_launch.scss */
 .launch .cube3 .cube-text {
   left: 95px;
   position: absolute;
   top: 16px;
 }
-/* line 103, ../sass/_launch.scss */
+/* line 177, ../sass/_launch.scss */
 .launch .cube3 .cube-inner {
   background: #fff;
 }
-/* line 105, ../sass/_launch.scss */
+/* line 179, ../sass/_launch.scss */
 .launch .cube3 .cube-inner:hover {
   margin-top: -15px;
 }
 
-/* line 114, ../sass/_launch.scss */
+/* line 188, ../sass/_launch.scss */
 .launch .cube-inner {
   background-color: #FFFFFF;
   background-position: 50% 0;
@@ -440,21 +487,21 @@ body {
   transition: margin-top 0.5s ease 0s;
   width: 100%;
 }
-/* line 125, ../sass/_launch.scss */
+/* line 199, ../sass/_launch.scss */
 .launch .cube-cover {
   height: 100%;
   opacity: 0.7;
   position: absolute;
   width: 100%;
 }
-/* line 132, ../sass/_launch.scss */
+/* line 206, ../sass/_launch.scss */
 .launch .cube-shadow {
   height: 100%;
   position: absolute;
   width: 100%;
   box-shadow: -14px 0 7px -2px rgba(0, 0, 0, 0.2) inset;
 }
-/* line 139, ../sass/_launch.scss */
+/* line 213, ../sass/_launch.scss */
 .launch .cube-border {
   display: block;
   border-bottom: 11px solid #D3D9DC;
@@ -463,7 +510,7 @@ body {
   position: relative;
   top: -11px;
 }
-/* line 146, ../sass/_launch.scss */
+/* line 220, ../sass/_launch.scss */
 .launch .cube-border:after {
   box-shadow: 0 -4px 4px 1px rgba(255, 255, 255, 0.4);
   content: "";
@@ -474,7 +521,7 @@ body {
   width: 106%;
 }
 
-/* line 160, ../sass/_launch.scss */
+/* line 234, ../sass/_launch.scss */
 .launch .btn-project-create {
   background: none repeat scroll 0 0 #94CD4C;
   border-radius: 12px 12px 12px 12px;
@@ -491,7 +538,7 @@ body {
   vertical-align: middle;
   margin: 36px 0 0 0;
 }
-/* line 177, ../sass/_launch.scss */
+/* line 251, ../sass/_launch.scss */
 .launch input[type="text"] {
   color: #000;
   background: #fff;
@@ -520,7 +567,7 @@ body {
 .launch input[type="text"]::-webkit-input-placeholder {
   color: black;
 }
-/* line 194, ../sass/_launch.scss */
+/* line 268, ../sass/_launch.scss */
 .launch form label {
   color: #000000;
   display: block;
@@ -528,7 +575,7 @@ body {
   margin: 0 0 2px;
 }
 
-/* line 203, ../sass/_launch.scss */
+/* line 277, ../sass/_launch.scss */
 .launch-footer {
   background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #0066cc), color-stop(100%, #4da6ff));
   background-image: -webkit-linear-gradient(left top, #0066cc, #4da6ff);
@@ -546,14 +593,14 @@ body {
   transform: rotate(-45deg);
   text-align: center;
 }
-/* line 211, ../sass/_launch.scss */
+/* line 285, ../sass/_launch.scss */
 .launch-footer p {
   color: #FFFFFF;
   font-size: 1.5em;
   padding: 7px 0 2px;
   text-align: center;
 }
-/* line 218, ../sass/_launch.scss */
+/* line 292, ../sass/_launch.scss */
 .launch-footer span {
   color: #FFFFFF;
   display: block;
@@ -561,11 +608,11 @@ body {
   font-style: italic;
   margin: 0 0 1px;
 }
-/* line 224, ../sass/_launch.scss */
+/* line 298, ../sass/_launch.scss */
 .launch-footer span a {
   color: #fff;
 }
-/* line 227, ../sass/_launch.scss */
+/* line 301, ../sass/_launch.scss */
 .launch-footer span:last-child {
   margin: 0 0 3px;
 }
@@ -576,79 +623,110 @@ body {
     width: 100%;
   }
 }
-/* line 7, ../sass/_task-model.scss */
-.nav {
-  margin: 0 0 25px 0;
-  padding: 12px 15px;
-}
-/* line 16, ../sass/_mixin.scss */
-.nav:before, .nav:after {
-  content: "\0020";
-  display: block;
-  height: 0;
-  overflow: hidden;
-}
-/* line 22, ../sass/_mixin.scss */
-.nav:after {
-  clear: both;
-}
-/* line 13, ../sass/_task-model.scss */
-.nav nav {
-  float: right;
-}
-/* line 16, ../sass/_task-model.scss */
-.nav a {
-  font-size: 1.2em;
-  color: #000;
-  text-transform: uppercase;
-  float: left;
-  display: block;
-  border-bottom: 1px dashed #000;
-  margin-right: 15px;
-}
-/* line 24, ../sass/_task-model.scss */
-.nav a:last-child {
-  margin-right: 0;
-}
-/* line 27, ../sass/_task-model.scss */
-.nav a:hover {
-  border-bottom: 1px solid transparent;
+/* line 4, ../sass/_task-model.scss */
+body {
+  background: #fff;
+  font: 100 62.5%/1.2 'Helvetica', Arial, Sans-serif;
+  color: #666;
+  position: relative;
 }
 
-/* line 39, ../sass/_task-model.scss */
-.cube-small.todo {
-  background: red;
+/* line 10, ../sass/_task-model.scss */
+.wrapper {
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
 }
+
+/* line 16, ../sass/_task-model.scss */
+footer {
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #0066cc), color-stop(100%, #80bfff));
+  background-image: -webkit-linear-gradient(left top, #0066cc, #80bfff);
+  background-image: -moz-linear-gradient(left top, #0066cc, #80bfff);
+  background-image: -o-linear-gradient(left top, #0066cc, #80bfff);
+  background-image: linear-gradient(left top, #0066cc, #80bfff);
+  position: absolute;
+  left: -61px;
+  top: 38px;
+  width: 254px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  text-align: center;
+}
+/* line 24, ../sass/_task-model.scss */
+footer p {
+  color: #FFFFFF;
+  font-size: 1.7em;
+  padding: 7px 0 2px;
+  text-align: center;
+}
+/* line 30, ../sass/_task-model.scss */
+footer span {
+  color: #FFFFFF;
+  display: block;
+  font-size: 1.2em;
+  font-style: italic;
+  margin: 1px 0 4px;
+}
+/* line 36, ../sass/_task-model.scss */
+footer span a {
+  color: #fff;
+}
+
 /* line 42, ../sass/_task-model.scss */
-.cube-small.done {
-  background: #94cd4c;
+.top {
+  padding: 100px 0 10px 50px;
+  margin-bottom: 20px;
 }
 
 /* line 47, ../sass/_task-model.scss */
-.user {
-  margin-bottom: 20px;
+.filter {
+  margin-top: 20px;
+  width: 300px;
 }
 /* line 16, ../sass/_mixin.scss */
-.user:before, .user:after {
+.filter:before, .filter:after {
   content: "\0020";
   display: block;
   height: 0;
   overflow: hidden;
 }
 /* line 22, ../sass/_mixin.scss */
-.user:after {
+.filter:after {
   clear: both;
 }
-/* line 50, ../sass/_task-model.scss */
-.user .profile {
-  float: left;
-  margin-right: 20px;
-  background: none repeat scroll 0 0 #FFFFFF;
-  box-shadow: 0 0 15px #A8BDC9;
-  padding: 25px 30px 40px;
+/* line 51, ../sass/_task-model.scss */
+.filter label {
+  color: #666666;
+  font-size: 1.6em;
+  margin: 11px 15px 0px 0;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
 }
-/* line 57, ../sass/_task-model.scss */
-.user .profile .avatar {
+/* line 58, ../sass/_task-model.scss */
+.filter .select2-container {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  width: 150px !important;
+}
+
+/* line 65, ../sass/_task-model.scss */
+.profile {
+  float: left;
+}
+/* line 67, ../sass/_task-model.scss */
+.profile .avatar {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   display: -moz-inline-stack;
@@ -657,12 +735,12 @@ body {
   *vertical-align: auto;
   zoom: 1;
   *display: inline;
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: 75px;
   overflow: hidden;
 }
-/* line 65, ../sass/_task-model.scss */
-.user .profile .avatar img {
+/* line 75, ../sass/_task-model.scss */
+.profile .avatar img {
   border-radius: 5px;
   overflow: hidden;
   display: -moz-inline-stack;
@@ -672,350 +750,27 @@ body {
   zoom: 1;
   *display: inline;
 }
-/* line 71, ../sass/_task-model.scss */
-.user .profile .name {
-  margin: 0 20px;
+/* line 81, ../sass/_task-model.scss */
+.profile .name {
+  margin: 18px 0 0 0;
   font-size: 1.8em;
-  color: #000;
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  zoom: 1;
-  *display: inline;
-  min-width: 100px;
+  color: #fff;
 }
-/* line 80, ../sass/_task-model.scss */
-.user .progress {
-  float: left;
-  margin-right: 20px;
-  background: none repeat scroll 0 0 #FFFFFF;
-  box-shadow: 0 0 15px #A8BDC9;
-  padding: 25px 30px 40px;
-}
-/* line 86, ../sass/_task-model.scss */
-.user .progress h4 {
-  font-size: 1.7em;
-  color: #000;
+
+/* line 88, ../sass/_task-model.scss */
+.form-task-add {
+  position: relative;
 }
 /* line 90, ../sass/_task-model.scss */
-.user .progress table {
-  margin: 20px 0 0 0;
-  width: 500px;
-  border-top: 1px solid #D3D9DC;
+.form-task-add .wrap {
+  padding: 15px 30px;
 }
-/* line 94, ../sass/_task-model.scss */
-.user .progress table th {
-  font-size: 1.2em;
-  font-weight: bold;
-  padding: 4px 5px 0px;
-}
-/* line 101, ../sass/_task-model.scss */
-.user .progress table td {
-  vertical-align: top;
-  font-size: 1.2em;
-  padding: 7px 5px;
-}
-/* line 107, ../sass/_task-model.scss */
-.user .progress table .line {
-  height: 1px;
-  border-bottom: 1px solid #D3D9DC;
-}
-/* line 114, ../sass/_task-model.scss */
-.user .new-task {
-  float: right;
-  background: none repeat scroll 0 0 #FFFFFF;
-  box-shadow: 0 0 15px #A8BDC9;
-  padding: 25px 30px 40px;
-}
-
-/* line 125, ../sass/_task-model.scss */
-.head {
-  background: none repeat scroll 0 0 #FFFFFF;
-  box-shadow: 0 0 15px #A8BDC9;
-  padding: 25px 30px 40px;
-  margin: 0 0 25px 0;
-}
-
-/* line 133, ../sass/_task-model.scss */
-.great p {
-  font-family: "Lobster",'Helvetica', Arial, Sans-serif;
-  font-size: 2.6em;
-  padding: 0 0 10px 0;
-}
-/* line 138, ../sass/_task-model.scss */
-.great time {
-  font-size: 1.2em;
-  margin-left: 5px;
-}
-
-/* line 146, ../sass/_task-model.scss */
-.project {
-  background: none repeat scroll 0 0 #FFFFFF;
-  box-shadow: 0 0 15px #A8BDC9;
-  padding: 25px 30px 40px;
-}
-/* line 150, ../sass/_task-model.scss */
-.project header {
-  margin: 0 0 15px 0;
-  color: #666666;
-  font-size: 3em;
-  line-height: 1;
-  font-weight: bold;
-  text-transform: capitalize;
-  font-family: "HelveticaNeueUL",'Helvetica', Arial, Sans-serif;
-}
-/* line 160, ../sass/_task-model.scss */
-.project .btn-add {
-  display: block;
-  width: 100px;
-  margin: auto;
-  text-transform: uppercase;
-  background: none repeat scroll 0 0 #94CD4C;
-  padding: 10px 35px 10px;
-  position: relative;
-  color: #fff;
-  line-height: 1;
-  font-size: 1.4em;
-  font-weight: 600;
-  border-radius: 12px;
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.4);
-}
-/* line 175, ../sass/_task-model.scss */
-.project .btn-delete {
-  background: red;
-  color: #fff;
-  line-height: 1;
-  font-size: 1.2em;
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  zoom: 1;
-  *display: inline;
-  padding: 4px 5px;
-  border-radius: 2px;
-  position: relative;
-  top: 13px;
-  margin-left: -39px;
-}
-/* line 188, ../sass/_task-model.scss */
-.project .btn-delete:before {
-  position: absolute;
-  content: '';
-}
-/* line 193, ../sass/_task-model.scss */
-.project .btn-change-status {
-  background: #000080;
-  margin-left: 3px;
-  color: #fff;
-  line-height: 1;
-  font-size: 1.2em;
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  zoom: 1;
-  *display: inline;
-  padding: 4px 5px;
-  border-radius: 2px;
-  position: relative;
-  top: 13px;
-  margin-left: 3px;
-}
-/* line 209, ../sass/_task-model.scss */
-.project .task-head {
-  font-family: "Lobster",'Helvetica', Arial, Sans-serif;
-  font-size: 2.5em;
-}
-/* line 214, ../sass/_task-model.scss */
-.project .task-item {
-  padding: 40px 40px 0 40px;
-}
-/* line 217, ../sass/_task-model.scss */
-.project .task-item .cube {
-  background-color: #FFFFFF;
-  padding: 20px 23px 13px;
-  position: relative;
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2);
-}
-/* line 222, ../sass/_task-model.scss */
-.project .task-item .cube .cube-top {
-  display: block;
-  border-bottom: 11px solid #D3D9DC;
-  position: relative;
-  z-index: 1;
-  border-left: 19px dashed rgba(0, 0, 0, 0);
-  border-right: 19px dashed rgba(0, 0, 0, 0);
-  clear: both;
-  margin: -32px -25px 10px;
-}
-/* line 231, ../sass/_task-model.scss */
-.project .task-item .cube .cube-top:after {
-  content: "";
-  height: 1px;
-  left: -4px;
-  position: absolute;
-  top: 17px;
-  width: 101%;
-}
-/* line 240, ../sass/_task-model.scss */
-.project .task-item .cube .cube-top-shadow {
-  height: 42px;
-  margin: 0 -35px;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 3;
-}
-/* line 247, ../sass/_task-model.scss */
-.project .task-item .cube .cube-top-shadow:before {
-  background: url("../images/static/shadow.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-  content: "";
-  height: 42px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100px;
-}
-/* line 256, ../sass/_task-model.scss */
-.project .task-item .cube .cube-top-shadow:after {
-  background: url("../images/static/shadow.png") no-repeat scroll 100% 0 rgba(0, 0, 0, 0);
-  content: "";
-  height: 42px;
-  left: 100px;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-/* line 266, ../sass/_task-model.scss */
-.project .task-item .cube .cube-bottom-shadow {
-  height: 42px;
-  margin: 0 -23px;
-  position: absolute;
-  bottom: -42px;
-  width: 100%;
-  z-index: 3;
-}
-/* line 273, ../sass/_task-model.scss */
-.project .task-item .cube .cube-bottom-shadow:before {
-  background: url("../images/static/shadow.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-  content: "";
-  height: 42px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100px;
-}
-/* line 282, ../sass/_task-model.scss */
-.project .task-item .cube .cube-bottom-shadow:after {
-  background: url("../images/static/shadow.png") no-repeat scroll 100% 0 rgba(0, 0, 0, 0);
-  content: "";
-  height: 42px;
-  left: 100px;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-/* line 294, ../sass/_task-model.scss */
-.project .task-layout {
-  padding: 0 50px 0 5px;
-  position: relative;
-}
-/* line 297, ../sass/_task-model.scss */
-.project .task-layout .task-name {
-  font-weight: 600;
-  font-size: 1.4em;
-  color: #000;
-  padding: 6px 0 7px;
-}
-/* line 303, ../sass/_task-model.scss */
-.project .task-layout .task-desc {
-  font-size: 1.3em;
-  line-height: 1.3;
-  color: #666;
-  padding: 3px 0 5px;
-}
-/* line 310, ../sass/_task-model.scss */
-.project .task-layout .task-status {
-  /*text-align: center;
-  position: absolute;
-  margin-right: 14px;
-  right: -36px;
-  top: -9px;
-  width: 64px;
-  height: 30px;
-  */
-  text-align: center;
-  position: absolute;
-  right: -55px;
-  top: 50%;
-  margin-top: -23px;
-  width: 60px;
-  height: 46px;
-}
-/* line 327, ../sass/_task-model.scss */
-.project .task-layout .task-status.todo {
-  background: red;
-}
-/* line 329, ../sass/_task-model.scss */
-.project .task-layout .task-status.todo:after {
-  border-right: 16px solid red;
-}
-/* line 334, ../sass/_task-model.scss */
-.project .task-layout .task-status.inprogress {
-  background: gold;
-}
-/* line 336, ../sass/_task-model.scss */
-.project .task-layout .task-status.inprogress:after {
-  border-right: 16px solid gold;
-}
-/* line 341, ../sass/_task-model.scss */
-.project .task-layout .task-status.done {
-  background: #94cd4c;
-}
-/* line 343, ../sass/_task-model.scss */
-.project .task-layout .task-status.done:after {
-  border-right: 16px solid #94cd4c;
-}
-/* line 348, ../sass/_task-model.scss */
-.project .task-layout .task-status:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin-left: -16px;
-  -webkit-transform: scale(1.0001, 1.0001);
-  -moz-transform: scale(1.0001, 1.0001);
-  -ms-transform: scale(1.0001, 1.0001);
-  -o-transform: scale(1.0001, 1.0001);
-  transform: scale(1.0001, 1.0001);
-  border-top: 23px solid #FFFFFF;
-  border-bottom: 23px solid #FFFFFF;
-}
-/* line 362, ../sass/_task-model.scss */
-.project .task-layout .task-status p {
-  color: #fff;
-  font-size: 1.1em;
-  line-height: 46px;
-}
-/* line 371, ../sass/_task-model.scss */
-.project .form-task-add {
-  margin: 40px 0 20px;
-  padding: 0 20px;
-  position: relative;
-}
-/* line 376, ../sass/_task-model.scss */
-.project .form-task-add .wrap {
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2);
-  padding: 25px 40px;
-}
-/* line 380, ../sass/_task-model.scss */
-.project .form-task-add form {
+/* line 93, ../sass/_task-model.scss */
+.form-task-add form {
   padding: 10px 0 0 0;
 }
-/* line 383, ../sass/_task-model.scss */
-.project .form-task-add .cube-top {
+/* line 96, ../sass/_task-model.scss */
+.form-task-add .cube-top {
   display: block;
   border-bottom: 11px solid #D3D9DC;
   position: relative;
@@ -1025,8 +780,8 @@ body {
   clear: both;
   margin: -37px -42px 10px;
 }
-/* line 392, ../sass/_task-model.scss */
-.project .form-task-add .cube-top:after {
+/* line 105, ../sass/_task-model.scss */
+.form-task-add .cube-top:after {
   content: "";
   height: 1px;
   left: -4px;
@@ -1034,61 +789,30 @@ body {
   top: 17px;
   width: 101%;
 }
-/* line 401, ../sass/_task-model.scss */
-.project .form-task-add .cube-bottom-shadow {
-  bottom: -42px;
-  height: 42px;
-  margin: 0 -39px;
-  position: absolute;
-  width: 94%;
-  z-index: 3;
-}
-/* line 408, ../sass/_task-model.scss */
-.project .form-task-add .cube-bottom-shadow:before {
-  background: url("../images/static/shadow.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-  content: "";
-  height: 42px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100px;
-}
-/* line 417, ../sass/_task-model.scss */
-.project .form-task-add .cube-bottom-shadow:after {
-  background: url("../images/static/shadow.png") no-repeat scroll 100% 0 rgba(0, 0, 0, 0);
-  content: "";
-  height: 42px;
-  left: 100px;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-/* line 427, ../sass/_task-model.scss */
-.project .form-task-add label {
+/* line 114, ../sass/_task-model.scss */
+.form-task-add label {
   color: #666;
   display: block;
   font-size: 1.6em;
   margin: 0 0 5px;
 }
-/* line 433, ../sass/_task-model.scss */
-.project .form-task-add input[type="submit"] {
+/* line 120, ../sass/_task-model.scss */
+.form-task-add input[type="submit"] {
   display: block;
   text-transform: uppercase;
   text-align: center;
   background: none repeat scroll 0 0 #94CD4C;
-  padding: 8px 35px 8px;
+  padding: 9px 45px;
   position: relative;
   color: #fff;
   line-height: 1;
   font-size: 1.4em;
   font-weight: 600;
-  border-radius: 12px;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.4);
-  width: 150px;
   margin: 20px auto 0;
 }
-/* line 449, ../sass/_task-model.scss */
-.project .form-task-add input[type="text"], .project .form-task-add input[type="number"] {
+/* line 136, ../sass/_task-model.scss */
+.form-task-add input[type="text"], .form-task-add input[type="number"] {
   color: #000;
   background: #fff;
   display: block;
@@ -1104,27 +828,27 @@ body {
   padding: 7px 12px;
 }
 /* line 61, ../sass/_mixin.scss */
-.project .form-task-add input[type="text"].placeholder, .project .form-task-add input[type="number"].placeholder {
+.form-task-add input[type="text"].placeholder, .form-task-add input[type="number"].placeholder {
   color: black;
 }
 /* line 64, ../sass/_mixin.scss */
-.project .form-task-add input[type="text"]:-moz-placeholder, .project .form-task-add input[type="number"]:-moz-placeholder {
+.form-task-add input[type="text"]:-moz-placeholder, .form-task-add input[type="number"]:-moz-placeholder {
   color: black;
 }
 /* line 67, ../sass/_mixin.scss */
-.project .form-task-add input[type="text"]::-webkit-input-placeholder, .project .form-task-add input[type="number"]::-webkit-input-placeholder {
+.form-task-add input[type="text"]::-webkit-input-placeholder, .form-task-add input[type="number"]::-webkit-input-placeholder {
   color: black;
 }
-/* line 463, ../sass/_task-model.scss */
-.project .form-task-add input[type="text"] {
+/* line 150, ../sass/_task-model.scss */
+.form-task-add input[type="text"] {
   width: 100%;
 }
-/* line 466, ../sass/_task-model.scss */
-.project .form-task-add input[type="number"] {
+/* line 153, ../sass/_task-model.scss */
+.form-task-add input[type="number"] {
   width: 250px;
 }
-/* line 469, ../sass/_task-model.scss */
-.project .form-task-add textarea {
+/* line 156, ../sass/_task-model.scss */
+.form-task-add textarea {
   resize: none;
   border: none;
   color: #000;
@@ -1143,20 +867,309 @@ body {
   width: 100%;
 }
 /* line 61, ../sass/_mixin.scss */
-.project .form-task-add textarea.placeholder {
+.form-task-add textarea.placeholder {
   color: black;
 }
 /* line 64, ../sass/_mixin.scss */
-.project .form-task-add textarea:-moz-placeholder {
+.form-task-add textarea:-moz-placeholder {
   color: black;
 }
 /* line 67, ../sass/_mixin.scss */
-.project .form-task-add textarea::-webkit-input-placeholder {
+.form-task-add textarea::-webkit-input-placeholder {
   color: black;
 }
-/* line 486, ../sass/_task-model.scss */
-.project .form-task-add select {
+/* line 173, ../sass/_task-model.scss */
+.form-task-add select {
   margin: 0 0 15px 0;
+}
+
+/* line 178, ../sass/_task-model.scss */
+nav {
+  float: right;
+}
+/* line 180, ../sass/_task-model.scss */
+nav a {
+  font-size: 1.2em;
+  color: #fff;
+  text-transform: uppercase;
+  float: left;
+  display: block;
+  margin-right: 15px;
+  padding: 4px 6px;
+}
+/* line 189, ../sass/_task-model.scss */
+nav a:last-child {
+  margin-right: 0;
+}
+/* line 192, ../sass/_task-model.scss */
+nav a:hover {
+  border-bottom: 1px solid transparent;
+}
+/* line 195, ../sass/_task-model.scss */
+nav a.login {
+  background: none repeat scroll 0 0 #94CD4C;
+}
+/* line 198, ../sass/_task-model.scss */
+nav a.sign {
+  background: #0066CC;
+}
+
+/* line 206, ../sass/_task-model.scss */
+.cube-small.todo {
+  background: gold;
+}
+/* line 209, ../sass/_task-model.scss */
+.cube-small.done {
+  background: #0066cc;
+}
+
+/* line 214, ../sass/_task-model.scss */
+.change-status {
+  position: absolute;
+  top: -10px;
+  left: -122px;
+  text-align: center;
+  width: 95px;
+}
+/* line 220, ../sass/_task-model.scss */
+.change-status .btn-change-status {
+  background: #94CD4C;
+  color: #fff;
+  line-height: 1;
+  font-size: 1.2em;
+  display: block;
+  padding: 4px 5px;
+  border-radius: 2px;
+}
+/* line 231, ../sass/_task-model.scss */
+.change-status .choice {
+  display: none;
+  margin-top: 2px;
+}
+/* line 234, ../sass/_task-model.scss */
+.change-status .choice a {
+  display: block;
+  color: #fff;
+  line-height: 1;
+  font-size: 1.2em;
+  padding: 4px 5px;
+  border-radius: 2px;
+  margin-bottom: 2px;
+}
+/* line 242, ../sass/_task-model.scss */
+.change-status .choice a.status-todo {
+  background: gold;
+}
+/* line 245, ../sass/_task-model.scss */
+.change-status .choice a.status-inprogress {
+  background: orange;
+}
+/* line 248, ../sass/_task-model.scss */
+.change-status .choice a.status-done {
+  background: #0066cc;
+}
+
+/* line 259, ../sass/_task-model.scss */
+.project .task-head {
+  font-family: "Lobster",'Helvetica', Arial, Sans-serif;
+  font-size: 2.5em;
+}
+/* line 264, ../sass/_task-model.scss */
+.project .task-item {
+  margin-left: 100px;
+  padding: 40px 32px 0 0;
+}
+/* line 267, ../sass/_task-model.scss */
+.project .task-item .btn-delete {
+  background: red;
+  color: #fff;
+  line-height: 1;
+  font-size: 1.2em;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  padding: 4px 5px;
+  border-radius: 2px;
+  position: relative;
+  top: 13px;
+  margin-left: -28px;
+}
+/* line 280, ../sass/_task-model.scss */
+.project .task-item .btn-delete:before {
+  position: absolute;
+  content: '';
+}
+/* line 288, ../sass/_task-model.scss */
+.project .task-item .cube {
+  background-color: #FFFFFF;
+  padding: 20px 23px 13px;
+  position: relative;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+/* line 293, ../sass/_task-model.scss */
+.project .task-item .cube .cube-top {
+  display: block;
+  border-bottom: 11px solid #D3D9DC;
+  position: relative;
+  z-index: 1;
+  border-left: 19px dashed rgba(0, 0, 0, 0);
+  border-right: 19px dashed rgba(0, 0, 0, 0);
+  clear: both;
+  margin: -32px -25px 10px;
+}
+/* line 302, ../sass/_task-model.scss */
+.project .task-item .cube .cube-top:after {
+  content: "";
+  height: 1px;
+  left: -4px;
+  position: absolute;
+  top: 17px;
+  width: 101%;
+}
+/* line 311, ../sass/_task-model.scss */
+.project .task-item .cube .cube-top-shadow {
+  height: 42px;
+  margin: 0 -35px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+/* line 318, ../sass/_task-model.scss */
+.project .task-item .cube .cube-top-shadow:before {
+  background: url("../images/static/shadow.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  content: "";
+  height: 42px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100px;
+}
+/* line 327, ../sass/_task-model.scss */
+.project .task-item .cube .cube-top-shadow:after {
+  background: url("../images/static/shadow.png") no-repeat scroll 100% 0 rgba(0, 0, 0, 0);
+  content: "";
+  height: 42px;
+  left: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 337, ../sass/_task-model.scss */
+.project .task-item .cube .cube-bottom-shadow {
+  height: 42px;
+  margin: 0 -23px;
+  position: absolute;
+  bottom: -42px;
+  width: 100%;
+  z-index: 3;
+}
+/* line 344, ../sass/_task-model.scss */
+.project .task-item .cube .cube-bottom-shadow:before {
+  background: url("../images/static/shadow.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  content: "";
+  height: 42px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100px;
+}
+/* line 353, ../sass/_task-model.scss */
+.project .task-item .cube .cube-bottom-shadow:after {
+  background: url("../images/static/shadow.png") no-repeat scroll 100% 0 rgba(0, 0, 0, 0);
+  content: "";
+  height: 42px;
+  left: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 365, ../sass/_task-model.scss */
+.project .task-layout {
+  padding: 0 50px 0 5px;
+  position: relative;
+}
+/* line 368, ../sass/_task-model.scss */
+.project .task-layout .task-name {
+  font-weight: 600;
+  font-size: 1.4em;
+  color: #000;
+  padding: 6px 0 7px;
+  min-height: 16px;
+}
+/* line 375, ../sass/_task-model.scss */
+.project .task-layout .task-desc {
+  font-size: 1.3em;
+  line-height: 1.3;
+  color: #666;
+  padding: 3px 0 5px;
+  min-height: 29px;
+}
+/* line 383, ../sass/_task-model.scss */
+.project .task-layout .task-status {
+  text-align: center;
+  position: absolute;
+  right: -55px;
+  top: 50%;
+  margin-top: -23px;
+  width: 60px;
+  height: 46px;
+}
+/* line 392, ../sass/_task-model.scss */
+.project .task-layout .task-status.todo {
+  background: gold;
+}
+/* line 394, ../sass/_task-model.scss */
+.project .task-layout .task-status.todo:after {
+  border-right: 16px solid gold;
+}
+/* line 399, ../sass/_task-model.scss */
+.project .task-layout .task-status.inprogress {
+  background: orange;
+}
+/* line 401, ../sass/_task-model.scss */
+.project .task-layout .task-status.inprogress:after {
+  border-right: 16px solid orange;
+}
+/* line 406, ../sass/_task-model.scss */
+.project .task-layout .task-status.done {
+  background: #0066cc;
+}
+/* line 408, ../sass/_task-model.scss */
+.project .task-layout .task-status.done:after {
+  border-right: 16px solid #0066cc;
+}
+/* line 413, ../sass/_task-model.scss */
+.project .task-layout .task-status.new {
+  background: #94CD4C;
+}
+/* line 415, ../sass/_task-model.scss */
+.project .task-layout .task-status.new:after {
+  border-right: 16px solid #94CD4C;
+}
+/* line 419, ../sass/_task-model.scss */
+.project .task-layout .task-status:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-left: -16px;
+  -webkit-transform: scale(1.0001, 1.0001);
+  -moz-transform: scale(1.0001, 1.0001);
+  -ms-transform: scale(1.0001, 1.0001);
+  -o-transform: scale(1.0001, 1.0001);
+  transform: scale(1.0001, 1.0001);
+  border-top: 23px solid #FFFFFF;
+  border-bottom: 23px solid #FFFFFF;
+}
+/* line 433, ../sass/_task-model.scss */
+.project .task-layout .task-status p {
+  color: #fff;
+  font-size: 1.1em;
+  line-height: 46px;
 }
 
 /* line 4, ../sass/_select2.scss */

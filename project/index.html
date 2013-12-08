@@ -21,112 +21,63 @@
 </head>
 <body>  
   
-  <div class="nav">
-    <div class="wrapper">
-      <nav>
-        <a href="#">login</a>
-        <a href="#">sign up</a>
-      </nav>
-    </div>
-  </div>
+  <footer>
+    <p class="copyright">&copy; Tracker 2013</p>
+     <span><a href="https://github.com/julia-shcherbina">Julia Scherbina</a></span>
+  </footer>
   
-  <div class="wrapper">
-  
+  <section class="project wrapper">
     
-    
-    <!--<header class="head">
-      
-          <div class="great">
-            <p>Today is <time id="today"></time> </p>
-            <p>What should you do today?</p>
+    <nav>
+      <a href="#" class="login">login</a>
+      <a href="#" class="sign">sign up</a>
+    </nav>
+   
+    <div class="top cf">
+      <article class="profile cube-profile">
+        <div class="cube-inner">
+          <i class="cube-cover"></i>
+          <i class="cube-shadow"></i>
+          <div class="cube-data">
+            <a href="#" class="avatar"><img src="http://placehold.it/75" alt=""></a>
+            <h3 class="name">Julia Scherbina</h3>
           </div>
-        
-          <div>
-            <div class="cube-small done">
-              <i class="cube-small-top"></i>
-              <p>done</p>
-            </div>
-          </div>
-    </header>-->
-    
-    <div class="user">
-      <div class="profile">
-        <a href="#" class="avatar"><img src="http://placehold.it/60" alt=""></a>
-        <h3 class="name">Julia Scherbina</h3>
-      </div>
+          <i class="cube-border"></i>
+        </div>
+      </article>
       
-      <!--<div class="progress">
-        <h4>This is your progress</h4>
-        
-        <table>
-          <thead>
-            <tr>
-              <th>date</th>
-              <th>task name</th>
-              <th>task status</th>
-              <th>award</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td colspan="4" class="line"></td>
-            </tr>
-            <tr>
-              <td width="15%">10.04.2013</td>
-              <td width="55%">new taskname </td>
-              <td width="15%">in-progress</td>
-              <td width="15%">test</td>
-            </tr>
-            <tr>
-              <td width="15%">09.04.2013</td>
-              <td width="55%"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci</p></td>
-              <td width="15%">done</td>
-              <td width="15%">test</td>
-            </tr>
-            <tr>
-              <td width="15%">10.04.2013</td>
-              <td width="55%">new taskname </td>
-              <td width="15%">in-progress</td>
-              <td width="15%">test</td>
-            </tr>
-            <tr>
-              <td>08.04.2013</td>
-              <td>new taskname</td>
-              <td>done</td>
-              <td>test</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>-->
-      
-      <div class="new-task">
-        <a href="#">create new task</a>
-        <!--<br>
-        or 
-        <br>
-        <a href="#">change your progress</a>-->
+      <div class="cube-form">
+         <div class="cube-inner">
+        <i class="cube-cover"></i>
+        <i class="cube-shadow"></i>
+        <div class="project-form">
+          
+        </div>
+        <i class="cube-border"></i>
       </div>
+      </div>  
     </div>
-  
     
-  </div>
-
-  
-  <div class="wrapper">
-
+    <div class="filter">
+      <label>Filter</label>
+      <select name="status" id="task-status" class="select-js"> 
+        <option value="todo">todo</option>
+        <option value="inprogress">inprogress</option>
+        <option value="done">done</option>
+       </select>
+    </div>
+    
     <div class="project">
       
-      
     </div>
-    
-  </div>
+      
+  </section>
   
 <script src="js/vendor/jquery-1.9.0.js"></script> 
 <script src="js/vendor/underscore.js"></script> 
 <script src="js/vendor/select2.js"></script>
 
 <script src="js/tasks-data.js"></script>
-
 <script src="js/template-library.js"></script>
 
 </body>

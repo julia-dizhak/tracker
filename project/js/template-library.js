@@ -28,6 +28,7 @@ $(function(){
   
   Task = {};
   Task.el = $('.wrapper .project');
+  Task.form = $('.project-form')
   
   Task.addTaskHead = function(head) {
     head = '<h3 class=\'task-head\'>' + 'Tasks for today' + '</h3>';
@@ -37,9 +38,8 @@ $(function(){
   Task.addTaskForm = function addTaskForm(form) {
     form = '<div class=\'form-task-add\'>' +
               '<div class=\'wrap\'>' +
-                '<i class=\'cube-top\'></i>'+
                 '<form method="post" class=\'form-task-add-form\'>' +  
-                '<label>' + 'Enter name for task' + '</label>' +
+                '<label>' + 'Please enter name' + '</label>' +
                 '<input name="name" id="task-name" type="text" />' +
                 // '<label>' + 'Status' + '</label>' +
 //                 '<select name="status" id="task-status" class=\"select-js\">' +
@@ -47,15 +47,14 @@ $(function(){
 //                  '<option value="inprogress">inprogress</option>'+
 //                  '<option value="done">done</option>'+
 //                 '</select>' +
-                '<label>' + 'Enter description for task' + '</label>' +
+                '<label>' + 'Please enter description' + '</label>' +
                 '<textarea id="task-desc" name="desc" type="text" rows="4" cols="30">' + '</textarea>' + 
                 '<input class="btn-add" type="submit" value="create task" />'+
                 '</form>' +
-                '<i class=\'cube-bottom-shadow\'></i>'+
               '</div>' +
           '</div>';
     
-    Task.el.append(form);
+    Task.form.append(form);
     $('.select-js').select2();
   };
   
@@ -109,7 +108,14 @@ $(function(){
             '<div class=\'task-desc\' contentEditable="true"> <%= desc %>  </div>' +
             '<div class=\'task-status <%= status %>\'>' + '<p><%= status %></p>' + '</div>' +
             '<a href="javascript:;" class=\'btn-delete\'>' + 'delete task' + '</a>' +
+            '<div class=\'change-status\' >' + 
             '<a href="javascript:;" class=\'btn-change-status\'>' + 'change status' + '</a>' +
+            '<div class=\'choice\' >' + 
+              '<a href="javascript:;" class=\'status-todo\'>' + 'todo' + '</a>' +
+              '<a href="javascript:;" class=\'status-inprogress\'>' + 'inporgress' + '</a>' +
+              '<a href="javascript:;" class=\'status-done\'>' + 'done' + '</a>' +
+            '</div>' +
+            '</div>' +
           '</div>' +
           '<i class=\'cube-bottom-shadow\'></i>'+
         '</div>' +
@@ -118,7 +124,8 @@ $(function(){
 
   Task.renderItem = function(item){
     var res = Task.template(item);
-    $(res).insertAfter('.form-task-add');
+    $(res).insertAfter('.filter');
+    //$(".project").html($(res));
 
     $('.btn-delete').on('click', Task.removeItem);
     $('.task-name').on('blur', Task.editContent);
@@ -145,6 +152,13 @@ $(function(){
        });
   }
 
+  Task.changeStatus = function(event){
+    event.preventDefault();
+    var button = $(event.target);
+    
+    $(button).next('.choice').fadeToggle( "slow", "linear" );
+  }
+
   Task.init = function(){
     
     
@@ -156,6 +170,8 @@ $(function(){
     // initial render of all tasks
     _.each(Tasks, this.renderItem);
     
+    $('.btn-change-status').on('click', Task.changeStatus);
+     
     Task.offlineEvent();
   }
   

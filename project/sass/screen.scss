@@ -39,9 +39,13 @@ $color-priority-high: #ff0000;
 $color-priority-normal: orange;
 $color-priority-low: #FFD700;
 
-$task-todo: #ff0000;
-$task-done: #94CD4C;
-$task-inprogress: #FFD700;
+//$task-todo: #ff0000;
+//$task-done: #94CD4C;
+//$task-inprogress: #FFD700;
+
+$task-todo: #FFD700;
+$task-inprogress: orange;
+$task-done: #0066CC;
 
 $task-delete: #cc0000;
 
