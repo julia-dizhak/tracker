@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* line 17, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,45 +21,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -683,8 +683,9 @@ body {
   *vertical-align: auto;
   zoom: 1;
   *display: inline;
+  min-width: 100px;
 }
-/* line 79, ../sass/_task-model.scss */
+/* line 80, ../sass/_task-model.scss */
 .user .progress {
   float: left;
   margin-right: 20px;
@@ -692,35 +693,35 @@ body {
   box-shadow: 0 0 15px #A8BDC9;
   padding: 25px 30px 40px;
 }
-/* line 85, ../sass/_task-model.scss */
+/* line 86, ../sass/_task-model.scss */
 .user .progress h4 {
   font-size: 1.7em;
   color: #000;
 }
-/* line 89, ../sass/_task-model.scss */
+/* line 90, ../sass/_task-model.scss */
 .user .progress table {
   margin: 20px 0 0 0;
   width: 500px;
   border-top: 1px solid #D3D9DC;
 }
-/* line 93, ../sass/_task-model.scss */
+/* line 94, ../sass/_task-model.scss */
 .user .progress table th {
   font-size: 1.2em;
   font-weight: bold;
   padding: 4px 5px 0px;
 }
-/* line 100, ../sass/_task-model.scss */
+/* line 101, ../sass/_task-model.scss */
 .user .progress table td {
   vertical-align: top;
   font-size: 1.2em;
   padding: 7px 5px;
 }
-/* line 106, ../sass/_task-model.scss */
+/* line 107, ../sass/_task-model.scss */
 .user .progress table .line {
   height: 1px;
   border-bottom: 1px solid #D3D9DC;
 }
-/* line 113, ../sass/_task-model.scss */
+/* line 114, ../sass/_task-model.scss */
 .user .new-task {
   float: right;
   background: none repeat scroll 0 0 #FFFFFF;
@@ -728,7 +729,7 @@ body {
   padding: 25px 30px 40px;
 }
 
-/* line 124, ../sass/_task-model.scss */
+/* line 125, ../sass/_task-model.scss */
 .head {
   background: none repeat scroll 0 0 #FFFFFF;
   box-shadow: 0 0 15px #A8BDC9;
@@ -736,25 +737,25 @@ body {
   margin: 0 0 25px 0;
 }
 
-/* line 132, ../sass/_task-model.scss */
+/* line 133, ../sass/_task-model.scss */
 .great p {
   font-family: "Lobster",'Helvetica', Arial, Sans-serif;
   font-size: 2.6em;
   padding: 0 0 10px 0;
 }
-/* line 137, ../sass/_task-model.scss */
+/* line 138, ../sass/_task-model.scss */
 .great time {
   font-size: 1.2em;
   margin-left: 5px;
 }
 
-/* line 145, ../sass/_task-model.scss */
+/* line 146, ../sass/_task-model.scss */
 .project {
   background: none repeat scroll 0 0 #FFFFFF;
   box-shadow: 0 0 15px #A8BDC9;
   padding: 25px 30px 40px;
 }
-/* line 149, ../sass/_task-model.scss */
+/* line 150, ../sass/_task-model.scss */
 .project header {
   margin: 0 0 15px 0;
   color: #666666;
@@ -764,7 +765,7 @@ body {
   text-transform: capitalize;
   font-family: "HelveticaNeueUL",'Helvetica', Arial, Sans-serif;
 }
-/* line 159, ../sass/_task-model.scss */
+/* line 160, ../sass/_task-model.scss */
 .project .btn-add {
   display: block;
   width: 100px;
@@ -780,7 +781,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.4);
 }
-/* line 174, ../sass/_task-model.scss */
+/* line 175, ../sass/_task-model.scss */
 .project .btn-delete {
   background: red;
   color: #fff;
@@ -798,12 +799,12 @@ body {
   top: 13px;
   margin-left: -39px;
 }
-/* line 187, ../sass/_task-model.scss */
+/* line 188, ../sass/_task-model.scss */
 .project .btn-delete:before {
   position: absolute;
   content: '';
 }
-/* line 192, ../sass/_task-model.scss */
+/* line 193, ../sass/_task-model.scss */
 .project .btn-change-status {
   background: #000080;
   margin-left: 3px;
@@ -820,7 +821,7 @@ body {
   border-radius: 2px;
   position: relative;
   top: 13px;
-  margin-left: -69px;
+  margin-left: 3px;
 }
 /* line 209, ../sass/_task-model.scss */
 .project .task-head {

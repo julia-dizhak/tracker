@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript" src='jquery.js'></script>
+	<script type="text/javascript">
+		$(function(){
+			init();
+			$('.add').click(function(){
+				var message = $('.text').val();
+				var userName = JSON.parse(localStorage.user).name;
+				var item = {message: message, userName: userName};
+				$.ajax({
+					url: '/data',
+					type: 'POST',
+					dataType: 'json',
+					contentType: 'application/json',
+					data: JSON.stringify(item)
+				}).done(function(response){
+					$('.text').val('');
+					addItem(item.message, response.id, response.rev);
+				});
+			});
+			$('.register-button').click(function(){
+					var userName = $('.register-name').val();
+					var password = $('.register-password').val();
+					var user = {name: userName, password: password};
+					localStorage.user = JSON.stringify(user);
+					user.roles = [];
+					user.type = 'user';
+					user._id = 'org.couchdb.user:' + userName;
+					$.ajax({
+						url: '/_users',
+						type: 'POST',
+						dataType: 'json',
+						contentType: 'application/json',
+						data: JSON.stringify(user)
+					}).done(function(){
+						$.ajax({
+							url: '/_session',
+							type: 'POST',
+							dataType: 'json',
+							contentType: 'application/json',
+							data: localStorage.user
+						}).done(init);
+					});
+				});
+				$('.login-button').click(function(){
+					var userName = $('.login-name').val();
+					var password = $('.login-password').val();
+					var user = {name: userName, password: password};
+					localStorage.user = JSON.stringify(user);
+					$.ajax({
+						url: '/_session',
+						type: 'POST',
+						dataType: 'json',
+						contentType: 'application/json',
+						data: localStorage.user
+					}).done(init);
+				});
+				$('.logout-button').click(function(){
+					$.ajax({
+						url: '/_session',
+						type: 'DELETE'
+					}).done(init);
+				});
+		});
+		
+		function addItem(message, id, rev){
+			var container = $('<div class="item">').appendTo('.items');
+			container.attr('data-id', id);
+			container.attr('data-rev', rev);
+			$('<input type="text">').val(message).appendTo(container);
+			$('<input type="button" value="Update" class="update">').appendTo(container).click(function(){
+				var $this = $(this);
+				var id = $this.parent().attr('data-id');
+				var rev = $this.parent().attr('data-rev');
+				var url = '/data/' + id + '?rev=' + rev;
+				var textInput = $this.parent().find('input[type=text]');
+				var message = textInput.val();
+				var item = {message: message};
+				$.ajax({
+					url: url,
+					type: 'PUT',
+					dataType: 'json',
+					contentType: 'application/json',
+					data: JSON.stringify(item)
+				}).done(function(response){
+					$this.parent().attr('data-rev', response.rev);
+				});
+			});
+			$('<input type="button" value="Remove" class="remove">').appendTo(container).click(function(){
+				var $this = $(this);
+				var id = $this.parent().attr('data-id');
+				var rev = $this.parent().attr('data-rev');
+				var url = '/data/' + id + '?rev=' + rev;
+				$.ajax({
+					url: url,
+					type: 'DELETE',
+					dataType: 'json',
+					contentType: 'application/json',
+				}).done(function(){
+					container.remove();
+				});
+			});
+		}
+		
+		function init(){
+			$('.login').addClass('hidden');
+			$('.register').addClass('hidden');
+			$('.welcome').addClass('hidden');
+			$('.app').addClass('hidden');
+			$('.item').remove();
+			$.ajax({
+				url: '/data/_design/app/_list/myDocs/all',
+				type: 'GET',
+				dataType: 'json'
+			}).done(function(data){
+				for(var i in data){
+					var item = data[i];
+					addItem(item.message, item._id, item._rev);
+				}
+			});
+			$.ajax({
+				url: '/_session',
+				type: 'GET',
+				dataType: 'json'
+			}).done(function(data){
+				if(data.userCtx.name){
+					$('.app').removeClass('hidden');
+					if(localStorage.user){
+						var user = JSON.parse(localStorage.user);
+						user.name = data.userCtx.name;
+						localStorage.user = JSON.stringify(user);
+					}
+					else{
+						localStorage.user = JSON.stringify({name: data.userCtx.name});
+					}
+					$('.user-name').text(data.userCtx.name);
+					$('.welcome').removeClass('hidden');
+				}
+				else{
+					$('.login').removeClass('hidden');
+					$('.register').removeClass('hidden');
+					if(localStorage.user){
+						var user = JSON.parse(localStorage.user);
+						$('.login-name').val(user.name);
+						$('.login-password').val(user.password);
+					}
+				}
+			});
+		}
+	</script>
+	<style type="text/css">
+		.pane{
+			box-shadow: 0 0 3px black;
+			margin: 3px;
+			padding: 3px;
+			float: right;
+		}
+		.top::after{
+			content: "";
+			clear: both;
+			display: table;
+		}
+		.hidden{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="top">
+		<div class="login pane hidden">
+			<fieldset>
+				<legend>Login:</legend>
+				Name:
+				<input type="text" class="login-name" />
+				Password: 
+				<input type="password" class="login-password" />
+				<input type="button" class="login-button" value="login"/>
+			</fieldset>
+		</div>
+		<div class="register pane hidden">
+			<fieldset>
+				<legend>Register new user:</legend>
+				Name:
+				<input type="text" class="register-name" />
+				Password: 
+				<input type="password" class="register-password" />
+				<input type="button" class="register-button" value="register"/>
+			</fieldset>
+		</div>
+		<div class="welcome pane hidden">
+			Welcome, <span class="user-name"></span> :)
+			<input type="button" class="logout-button" value="logout"/>
+		</div>
+	</div>
+	<div class="app">
+		<input type="text" class="text" />
+		<input type="button" value="Add" class="add" />
+		<div class="items"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+CACHE MANIFEST
+
+CACHE:
+stylesheets/normalize.css
+stylesheets/screen.css
+js/vendor/jquery-1.9.0.js 
+js/vendor/underscore.js 
+js/vendor/select2.js
+js/tasks-data.js
+js/template-library.js
+
+NETWORK:
+
+
+FALLBACK:

@@ -1,21 +1,5 @@
 $(function(){
   
-	(function(){
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth()+1; //January is 0!
-
-    var yyyy = today.getFullYear();
-    if( dd<10 ){ 
-      dd='0'+dd 
-    } 
-    if (mm<10) {
-      mm='0'+mm 
-    } 
-    today = dd+'.'+mm+'.'+yyyy;
-    $('#today').html(today);
-	})();
-  
   $.fn.serializeObject = function() {
       var o = {};
       var a = this.serializeArray();
@@ -57,12 +41,12 @@ $(function(){
                 '<form method="post" class=\'form-task-add-form\'>' +  
                 '<label>' + 'Enter name for task' + '</label>' +
                 '<input name="name" id="task-name" type="text" />' +
-                '<label>' + 'Status' + '</label>' +
-                '<select name="status" id="task-status" class=\"select-js\">' +
-                 '<option value="todo">todo</option>'+
-                 '<option value="inprogress">inprogress</option>'+
-                 '<option value="done">done</option>'+
-                '</select>' +
+                // '<label>' + 'Status' + '</label>' +
+//                 '<select name="status" id="task-status" class=\"select-js\">' +
+//                  '<option value="todo">todo</option>'+
+//                  '<option value="inprogress">inprogress</option>'+
+//                  '<option value="done">done</option>'+
+//                 '</select>' +
                 '<label>' + 'Enter description for task' + '</label>' +
                 '<textarea id="task-desc" name="desc" type="text" rows="4" cols="30">' + '</textarea>' + 
                 '<input class="btn-add" type="submit" value="create task" />'+
@@ -79,14 +63,28 @@ $(function(){
     event.preventDefault();
     var form = $(event.target);
     var task_data = form.serializeObject();
+    task_data.status  = 'new';
     task_data.id = generateUUID();
     
     form.find('#task-name').val('');
     form.find('#task-desc').val('');
     
-    // push task item to window.Tasks
-    Tasks.push(task_data);
-    Task.renderItem(task_data);
+
+  
+    // push data to server
+    $.ajax({
+      type: 'POST',
+      contentType: 'application/json',
+      url: 'https://api.mongolab.com/api/1/databases/tasks/collections/tasks/?apiKey=Ju3FZxiia5y2QvDT14KcUp7TwO_JceQA',
+      dataType: 'json',
+      data: JSON.stringify(task_data)
+      }).done(
+        function(data){
+          // push task item to window.Tasks
+          Tasks.push(data);
+          Task.renderItem(data);
+        }
+      )
   };
 
   Task.editContent = function(event){
@@ -129,14 +127,27 @@ $(function(){
 
   Task.removeItem = function(event){
      event.preventDefault();
+     event.stopPropagation();
      var button = $(event.target),
      task_id = button.closest('div[data-id]').data('id');
-     button.closest('.task-item').hide('slow', function(){ $(this).closest('.task-item').remove(); });
 
-     Tasks.pop(_.findWhere(Tasks, {id: task_id}));
+     button.unbind('click');
+
+     var task = _.findWhere(Tasks, {id: task_id});
+
+     $.ajax({
+       type: 'DELETE',
+       url: 'https://api.mongolab.com/api/1/databases/tasks/collections/tasks/'+task._id['$oid']+'?apiKey=Ju3FZxiia5y2QvDT14KcUp7TwO_JceQA&codekitCB=408204034.041171',
+       async: true
+       }).done(function(data){
+         Tasks.pop(task);
+         button.closest('.task-item').hide('slow', function(){ $(this).closest('.task-item').remove(); });
+       });
   }
 
   Task.init = function(){
+    
+    
    
     Task.addTaskForm();
     //$(Task.addTaskHead()).insertBefore('.form-task-add');
@@ -144,10 +155,15 @@ $(function(){
     
     // initial render of all tasks
     _.each(Tasks, this.renderItem);
-    $('.btn-delete').on('click', Task.removeItem);
     
     Task.offlineEvent();
   }
+  
+  
+  //local storage хранение в local storage (потом хранение на сервере )
+  //имя пользователя
+  //
+  
   
   Task.offlineEvent = function(){
     
@@ -173,6 +189,11 @@ $(function(){
         alert('You are ' + event.type + '!');
     });
   }
+  
+  
+  
+  
+  
   Task.init();
 
 });
